@@ -3,16 +3,30 @@ class ExcalidrawRender < Formula
 
   desc "Clean, browser-free renderer for .excalidraw files (PNG/SVG)"
   homepage "https://github.com/shivama205/excalidraw-render"
-  url "https://files.pythonhosted.org/packages/77/71/e364a8898dbd41254c571fa880602b3d19fd8bbc937ceda6c7f4a169bebc/excalidraw_render-0.1.1.tar.gz"
-  sha256 "3773263fd35ea5054845417a3c4439a9ecbfa2272ebd00da08e0480c09cd16a8"
+  url "https://files.pythonhosted.org/packages/3e/20/75e70a3c869283dc26405f0d3c965f339041767b08a5cb9b37a702d49555/excalidraw_render-0.1.2.tar.gz"
+  sha256 "30d2b7a7cfac3509fd5b43e7c59fdde4ac7f3aec2ea25aaffdc1052a4d0a354d"
   license "MIT"
 
+  # Runtime
   depends_on "cairo"
   depends_on "python@3.13"
+
+  # Pillow's native build deps (transitive: cairosvg always imports PIL)
+  depends_on "freetype"
+  depends_on "jpeg-turbo"
+  depends_on "libtiff"
+  depends_on "little-cms2"
+  depends_on "openjpeg"
+  depends_on "webp"
 
   resource "cairosvg" do
     url "https://files.pythonhosted.org/packages/38/07/e8412a13019b3f737972dea23a2c61ca42becafc16c9338f4ca7a0caa993/cairosvg-2.9.0.tar.gz"
     sha256 "1debb00cd2da11350d8b6f5ceb739f1b539196d71d5cf5eb7363dbd1bfbc8dc5"
+  end
+
+  resource "pillow" do
+    url "https://files.pythonhosted.org/packages/8c/21/c2bcdd5906101a30244eaffc1b6e6ce71a31bd0742a01eb89e660ebfac2d/pillow-12.2.0.tar.gz"
+    sha256 "a830b1a40919539d07806aa58e1b114df53ddd43213d9c8b75847eee6c0182b5"
   end
 
   resource "cairocffi" do
