@@ -3,8 +3,8 @@ class ExcalidrawRender < Formula
 
   desc "Clean, browser-free renderer for .excalidraw files (PNG/SVG)"
   homepage "https://github.com/shivama205/excalidraw-render"
-  url "https://files.pythonhosted.org/packages/1b/4e/ce815429448efe047dee3cdbfc28b2c3a86a81015ae5c5de43597f1dfd80/excalidraw_render-0.1.0.tar.gz"
-  sha256 "809652143b54df308edc6ec8421d58d22c05ec559d89bb52efda3aacc6b1c407"
+  url "https://files.pythonhosted.org/packages/77/71/e364a8898dbd41254c571fa880602b3d19fd8bbc937ceda6c7f4a169bebc/excalidraw_render-0.1.1.tar.gz"
+  sha256 "3773263fd35ea5054845417a3c4439a9ecbfa2272ebd00da08e0480c09cd16a8"
   license "MIT"
 
   depends_on "cairo"
@@ -13,11 +13,6 @@ class ExcalidrawRender < Formula
   resource "cairosvg" do
     url "https://files.pythonhosted.org/packages/38/07/e8412a13019b3f737972dea23a2c61ca42becafc16c9338f4ca7a0caa993/cairosvg-2.9.0.tar.gz"
     sha256 "1debb00cd2da11350d8b6f5ceb739f1b539196d71d5cf5eb7363dbd1bfbc8dc5"
-  end
-
-  resource "pillow" do
-    url "https://files.pythonhosted.org/packages/8c/21/c2bcdd5906101a30244eaffc1b6e6ce71a31bd0742a01eb89e660ebfac2d/pillow-12.2.0.tar.gz"
-    sha256 "a830b1a40919539d07806aa58e1b114df53ddd43213d9c8b75847eee6c0182b5"
   end
 
   resource "cairocffi" do
