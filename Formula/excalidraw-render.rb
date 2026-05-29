@@ -7,16 +7,17 @@ class ExcalidrawRender < Formula
   sha256 "30d2b7a7cfac3509fd5b43e7c59fdde4ac7f3aec2ea25aaffdc1052a4d0a354d"
   license "MIT"
 
-  # Runtime
+  # cairo is needed by cairosvg at runtime.
+  # freetype / jpeg-turbo / libtiff / little-cms2 / openjpeg / webp are
+  # pillow's native build deps — pillow is a transitive dep because
+  # cairosvg's surface.py imports PIL at module load.
   depends_on "cairo"
-  depends_on "python@3.13"
-
-  # Pillow's native build deps (transitive: cairosvg always imports PIL)
   depends_on "freetype"
   depends_on "jpeg-turbo"
   depends_on "libtiff"
   depends_on "little-cms2"
   depends_on "openjpeg"
+  depends_on "python@3.13"
   depends_on "webp"
 
   resource "cairosvg" do
